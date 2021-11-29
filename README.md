@@ -20,8 +20,8 @@ Arduino based footswitch for ditto-x4 looper to send custom midi commands
 * Arduino Nano Board 340/ATmega Nano328P
 * 5.5V DC Voltage Regulator Step Down Power Supply Module 4.75V-12V to 5V 800mA
 
-![Prototype Board](/doc/bradboard.jpg)
-![Prototype Board Pins](/doc/bradboard_pins.jpg)
+![Prototype Board](/doc/breadboard.jpg)
+![Prototype Board Pins](/doc/breadboard_pins.jpg)
 
 ## Final Assembly
 
