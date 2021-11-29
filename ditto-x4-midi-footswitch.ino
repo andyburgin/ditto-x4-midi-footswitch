@@ -20,6 +20,14 @@
 OneButton _btnOne(PIN_BUTTON_ONE, true);
 OneButton _btnTwo(PIN_BUTTON_TWO, true);
 
+// Midi
+#define DITTO_CHANNEL 4
+#define CC_LOOPER_ONE_STOP 9
+#define CC_LOOPER_ONE_CLEAR 14
+#define CC_LOOPER_TWO_STOP 23
+#define CC_LOOPER_TWO_CLEAR 24
+#define CC_MIDI_ON 127
+
 MIDI_CREATE_DEFAULT_INSTANCE();
 
 // main
@@ -47,16 +55,20 @@ void loop() {
 // buttons
 void onOnePushed() {
   Serial.print(F("onOnePushed"));
+  MIDI.sendControlChange(CC_LOOPER_ONE_STOP,CC_MIDI_ON,DITTO_CHANNEL);
 }
 
 void onTwoPushed() {
   Serial.print(F("onTwoPushed"));
+  MIDI.sendControlChange(CC_LOOPER_TWO_STOP,CC_MIDI_ON,DITTO_CHANNEL);
 }
 
 void onOneLongPush() {
   Serial.print(F("onOneLongPush "));
+  MIDI.sendControlChange(CC_LOOPER_ONE_CLEAR,CC_MIDI_ON,DITTO_CHANNEL);
 }
   
 void onTwoLongPush() {
   Serial.print(F("onTwoLongPush "));
+  MIDI.sendControlChange(CC_LOOPER_TWO_CLEAR,CC_MIDI_ON,DITTO_CHANNEL);
 }
