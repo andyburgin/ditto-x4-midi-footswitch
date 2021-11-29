@@ -24,11 +24,12 @@ void setup() {
   Serial.begin(115200);
   Serial.print(F("Running "));
   
-  
   // button init
   _btnOne.attachClick(onOnePushed);
+  _btnOne.attachLongPressStart(onOneLongPush);
   
   _btnTwo.attachClick(onTwoPushed);
+  _btnTwo.attachLongPressStart(onTwoLongPush);
 }
 
 void loop() {
@@ -44,4 +45,12 @@ void onOnePushed() {
 
 void onTwoPushed() {
   Serial.print(F("onTwoPushed"));
+}
+
+void onOneLongPush() {
+  Serial.print(F("onOneLongPush "));
+}
+  
+void onTwoLongPush() {
+  Serial.print(F("onTwoLongPush "));
 }
